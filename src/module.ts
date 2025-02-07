@@ -14,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url)
 
     if (!hasNuxtModule('@quirks/nuxt', nuxt)) {
-      await installModule('@quirks/nuxt', nuxt)
+      await installModule('@quirks/nuxt')
     }
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`

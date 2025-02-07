@@ -56,9 +56,10 @@ const config: Config = generateConfig({
 export default defineNuxtPlugin({
   name: 'quirks:plugin',
   order: -100,
-  async setup(nuxtApp) {
+  setup(nuxtApp) {
     const cookie = useCookie('quirks')
     const configWithCookie = initialStateWithCookie(config, JSON.stringify(cookie.value))
+
     nuxtApp.vueApp.use(quirksPlugin, configWithCookie)
     console.log('Quirks plugin injected!')
   },
